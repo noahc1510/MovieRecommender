@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ce738bd-942e-4c6f-a723-470b7ad76aa0" name="Default Changelist" comment="" />
+    <list default="true" id="9ce738bd-942e-4c6f-a723-470b7ad76aa0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -33,7 +36,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="backend" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="MovieRecommender" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -45,7 +48,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -69,10 +72,11 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595008268629">
-      <screen x="0" y="23" width="1920" height="994" />
+    <state x="734" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595018356197">
+      <screen x="0" y="23" width="1920" height="995" />
     </state>
     <state x="734" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.994@0.23.1920.994" timestamp="1595008268629" />
+    <state x="734" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.995@0.23.1920.995" timestamp="1595018356197" />
     <state x="813" y="312" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595012631734">
       <screen x="0" y="23" width="1920" height="995" />
     </state>
