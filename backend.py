@@ -20,8 +20,9 @@ def get_douban(movie):
     d_data = ctx.call('decrypt', e_data)
 
     # 提取数据包中的评分信息和标题信息
-    rank = re.findall(r'\'value\': (.*?),', str(d_data).replace('}', ','))
-    title = re.findall(r'\'title\': \'(.*?)\'', str(d_data).replace('}', ','))
+    str_data=str(d_data).replace('}',',')  # 统一rank数值后的格式为','结尾
+    rank = re.findall(r'\'value\': (.*?),', str_data)
+    title = re.findall(r'\'title\': \'(.*?)\'', str_data)
 
     for i in range(len(rank)):
         print('{}:\t{}\t{}分'.format(i, title[i], rank[i]))
@@ -37,7 +38,6 @@ def get_douban(movie):
 def main():
     movie = '碟中谍4'
     get_douban(movie)
-    print("here")
 
 
 main()
