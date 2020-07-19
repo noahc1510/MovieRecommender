@@ -34,10 +34,27 @@ def get_douban(movie):
     # name=d_data.xpath('//*[@id="content"]/h1/span[1]/text()')
     # print(name)
 
+def movieFormated(movie):
+    # 中文转为英文？
+    movie2EN='Mission Impossible'
+    return movie2EN.replace(' ','+')
+
+
+def get_imdb(movie):
+    url='https://www.imdb.com/find?q='+movieFormated(movie)+'&ref_=nv_sr_sm'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    }
+    data = requests.get(url, headers=headers)
+    d_data = etree.HTML(data)
+    while(name==''):
+        name = d_data.xpath('//*[@id="main"]/div/div[2]/table/tbody/tr[{}]/td[2]/a/text()'.format(i))
+        print(name)
+
 
 def main():
     movie = '碟中谍4'
-    get_douban(movie)
+    get_imdb(movie)
 
 
 main()
