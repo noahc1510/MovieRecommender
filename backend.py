@@ -34,6 +34,9 @@ def get_douban(movie):
     # name=d_data.xpath('//*[@id="content"]/h1/span[1]/text()')
     # print(name)
 
+def get_zhihu(movie):
+    url='https://www.zhihu.com/search?type=content&q='+movie
+
 def movieFormated(movie):
     # 中文转为英文？
     movie2EN='Mission Impossible'
