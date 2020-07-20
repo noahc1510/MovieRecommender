@@ -29,10 +29,6 @@ def get_douban(movie):
 
     # for item in d_data['payload']['items']:
     #    print(item)
-    # dd_data = etree.HTML(d_data)
-    # name = d_data.xpath('//*[@id="root"]/div/div[2]/div[1]/div[1]/div[1]/div[1]/div/div[2]/span[2]/text()')
-    # name=d_data.xpath('//*[@id="content"]/h1/span[1]/text()')
-    # print(name)
 
 def get_zhihu(movie):
     url='https://www.zhihu.com/search?type=content&q='+movie
@@ -48,12 +44,12 @@ def get_imdb(movie):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
     }
-    data = requests.get(url, headers=headers)
+    data = requests.get(url, headers=headers).text
     d_data = etree.HTML(data)
-    while(name==''):
-        name = d_data.xpath('//*[@id="main"]/div/div[2]/table/tbody/tr[{}]/td[2]/a/text()'.format(i))
-        print(name)
-
+    name=d_data.xpath('//*[@id="main"]/div/div[2]/table/tbody/tr[1]/td[2]/a/text()')
+    name=d_data.xpath('//*[@id="main"]/div/div[2]/table/tbody/tr[1]/td[2]/a/text()')
+    print(url)
+    print(name)
 
 def main():
     movie = '碟中谍4'
