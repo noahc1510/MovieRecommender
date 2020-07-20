@@ -20,7 +20,7 @@ def get_douban(movie):
     d_data = ctx.call('decrypt', e_data)
 
     # 提取数据包中的评分信息和标题信息
-    str_data=str(d_data).replace('}',',')  # 统一rank数值后的格式为','结尾
+    str_data = str(d_data).replace('}', ',')  # 统一rank数值后的格式为','结尾
     rank = re.findall(r'\'value\': (.*?),', str_data)
     title = re.findall(r'\'title\': \'(.*?)\'', str_data)
 
@@ -30,30 +30,33 @@ def get_douban(movie):
     # for item in d_data['payload']['items']:
     #    print(item)
 
+
 def get_zhihu(movie):
-    url='https://www.zhihu.com/search?type=content&q='+movie
+    url = 'https://www.zhihu.com/search?type=content&q=' + movie
+
 
 def movieFormated(movie):
     # 中文转为英文？
-    movie2EN='Mission Impossible'
-    return movie2EN.replace(' ','+')
+    movie2EN = 'Mission Impossible'
+    return movie2EN.replace(' ', '+')
 
 
-def get_imdb(movie):
-    url='https://www.imdb.com/find?q='+movieFormated(movie)+'&ref_=nv_sr_sm'
+def get_IMDB(movie):
+    url = 'https://www.imdb.com/find?q=' + movieFormated(movie) + '&ref_=nv_sr_sm'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
     }
     data = requests.get(url, headers=headers).text
     d_data = etree.HTML(data)
-    name=d_data.xpath('//*[@id="main"]/div/div[2]/table/tbody/tr[1]/td[2]/a/text()')
-    name=d_data.xpath('//*[@id="main"]/div/div[2]/table/tbody/tr[1]/td[2]/a/text()')
-    print(url)
-    print(name)
+    for i in range(1,7):# IMDB最多只生成6个标题
+        str_data = d_data.xpath('//*[@id="main"]/div/div[2]/table/tr[{}]/td[2]/a/text()'.format(i))# 标题序数(x)=tr[x]
+        if(bool(str_data)==0):
+            break
+        print(str_data)
 
 def main():
     movie = '碟中谍4'
-    get_imdb(movie)
+    get_IMDB(movie)
 
 
 main()
