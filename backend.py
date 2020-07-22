@@ -33,32 +33,41 @@ def get_douban(movie):
 
 def get_zhihu(movie):
     url = 'https://www.zhihu.com/search?type=content&q=' + movie
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    }
 
 
-def movieReformate(movie):
-    movie2EN=''.join(re.findall('[a-zA-Z0-9 ]',movie))
+def movie_reformate(movie):
+    movie2EN = ''.join(re.findall('[a-zA-Z0-9 ]', movie))
     return movie2EN.replace(' ', '+')
 
 
 def get_IMDB(movie):
-    url = 'https://www.imdb.com/find?q=' + movieReformate(movie) + '&ref_=nv_sr_sm'
+    url = 'https://www.imdb.com/find?q=' + movie_reformate(movie) + '&ref_=nv_sr_sm'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
     }
     data = requests.get(url, headers=headers).text
     d_data = etree.HTML(data)
-    for i in range(1,7):# IMDB最多只生成6个标题
-        str_data = d_data.xpath('//*[@id="main"]/div/div[2]/table/tr[{}]/td[2]/a/text()'.format(i)) # 标题序数(x)=tr[x]
-        if(bool(str_data)==0):
-            if i==1:
+    for i in range(1, 7):  # IMDB最多只生成6个标题
+        title_data = d_data.xpath('//*[@id="main"]/div/div[2]/table/tr[{}]/td[2]/a/text()'.format(i))  # 标题序数(x)=tr[x]
+        url_data = d_data.xpath('//*[@id="main"]/div/div[2]/table/tr[{}]/td[2]/a/@href'.format(i))
+        if (bool(title_data) == 0 or bool(url_data)==0):
+            if i == 1:
                 return False
             break
-        print(str_data)
-    return i-1  # 数值会因为逻辑原因多1
+        url = 'https://www.imdb.com' + ''.join(url_data)
+        data = requests.get(url, headers=headers).text
+        content_data=etree.HTML(data)
+
+
+    return i - 1  # 数值会因为逻辑原因多1
+
 
 def main():
-    movie = '碟中谍4 Mission Impossbile'
-    if get_IMDB(movie)==False:
+    movie = '碟中谍4 Mission Impossible'
+    if get_IMDB(movie) == False:
         print("No result found.")
 
 
