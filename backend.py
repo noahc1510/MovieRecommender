@@ -47,15 +47,14 @@ def get_IMDB(movie):
     }
     data = requests.get(url, headers=headers).text
     d_data = etree.HTML(data)
-    print(url)
     for i in range(1,7):# IMDB最多只生成6个标题
-        str_data = d_data.xpath('//*[@id="main"]/div/div[2]/table/tr[{}]/td[2]/a/text()'.format(i))# 标题序数(x)=tr[x]
+        str_data = d_data.xpath('//*[@id="main"]/div/div[2]/table/tr[{}]/td[2]/a/text()'.format(i)) # 标题序数(x)=tr[x]
         if(bool(str_data)==0):
             if i==1:
                 return False
             break
         print(str_data)
-    return i-1
+    return i-1  # 数值会因为逻辑原因多1
 
 def main():
     movie = '碟中谍4 Mission Impossbile'
