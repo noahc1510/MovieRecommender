@@ -4,7 +4,7 @@ import re
 import execjs
 
 
-def get_douban(movie):
+def _get_douban(movie):
     # 获取豆瓣电影的搜索数据
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
@@ -31,20 +31,14 @@ def get_douban(movie):
     #    print(item)
 
 
-def get_zhihu(movie):
+def _get_zhihu(movie):
     url = 'https://www.zhihu.com/search?type=content&q=' + movie
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
     }
 
-
-def movie_reformate(movie):
-    movie2EN = ''.join(re.findall('[a-zA-Z0-9 ]', movie))
-    return movie2EN.replace(' ', '+')
-
-
-def get_IMDB(movie):
-    url = 'https://www.imdb.com/find?q=' + movie_reformate(movie) + '&ref_=nv_sr_sm'
+def _get_IMDB(movie):
+    url = 'https://www.imdb.com/find?q=' + ''.join(re.findall('[a-zA-Z0-9 ]', movie)) + '&ref_=nv_sr_sm'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
     }
@@ -60,15 +54,19 @@ def get_IMDB(movie):
         url = 'https://www.imdb.com' + ''.join(url_data)
         data = requests.get(url, headers=headers).text
         content_data=etree.HTML(data)
+        rank_data=content_data.xpath('//*[@id="title-overview-widget"]/div[1]/div[2]/div/div[1]/div[1]/div[1]/strong/span/text()')
+        print(rank_data)
 
 
     return i - 1  # 数值会因为逻辑原因多1
 
+def get_data(movie)
+    if _get_IMDB(movie) == False:
+        print("No result found.")
 
 def main():
     movie = '碟中谍4 Mission Impossible'
-    if get_IMDB(movie) == False:
-        print("No result found.")
+    get_data(movie)
 
 
 main()
