@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce738bd-942e-4c6f-a723-470b7ad76aa0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/douban_decrypt.js" beforeDir="false" afterPath="$PROJECT_DIR$/douban_decrypt.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +82,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -165,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595431203991</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add get_rank in _get_IMDB()">
+      <created>1595519341364</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1595519341364</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,48 +203,82 @@
     <MESSAGE value="Add err respond" />
     <MESSAGE value="Complete movieReformate" />
     <MESSAGE value="Follow the style guide" />
-    <option name="LAST_COMMIT_MESSAGE" value="Follow the style guide" />
+    <MESSAGE value="Add get_rank in _get_IMDB()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add get_rank in _get_IMDB()" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595018356197">
-      <screen x="0" y="23" width="1920" height="995" />
+    <state x="685" y="169" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596197284502">
+      <screen x="0" y="23" width="1792" height="1022" />
     </state>
+    <state x="685" y="169" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1022@0.23.1792.1022" timestamp="1596197284502" />
     <state x="734" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.994@0.23.1920.994" timestamp="1595008268629" />
     <state x="734" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.995@0.23.1920.995" timestamp="1595018356197" />
     <state x="813" y="312" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595012631734">
       <screen x="0" y="23" width="1920" height="995" />
     </state>
     <state x="813" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.995@0.23.1920.995" timestamp="1595012631734" />
-    <state width="949" height="252" key="GridCell.Tab.0.bottom" timestamp="1595511745693">
-      <screen x="0" y="23" width="1920" height="978" />
+    <state x="739" y="435" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1596265906116">
+      <screen x="0" y="23" width="1792" height="1030" />
     </state>
+    <state x="739" y="435" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.23.1792.1030@0.23.1792.1030" timestamp="1596265906116" />
+    <state x="100" y="123" width="1720" height="857" key="DiffContextDialog" timestamp="1596002587000">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="100" y="123" width="1720" height="857" key="DiffContextDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1596002587000" />
+    <state width="1771" height="283" key="GridCell.Tab.0.bottom" timestamp="1596278937387">
+      <screen x="0" y="23" width="1792" height="1031" />
+    </state>
+    <state width="1771" height="278" key="GridCell.Tab.0.bottom/0.23.1792.1022@0.23.1792.1022" timestamp="1596199641736" />
+    <state width="1771" height="280" key="GridCell.Tab.0.bottom/0.23.1792.1030@0.23.1792.1030" timestamp="1596265817443" />
+    <state width="1771" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1031@0.23.1792.1031" timestamp="1596278937387" />
+    <state width="1771" height="280" key="GridCell.Tab.0.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1596267370095" />
+    <state width="1771" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1596270460852" />
+    <state width="1329" height="217" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1596007295847" />
     <state width="949" height="252" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1595431031239" />
     <state width="949" height="252" key="GridCell.Tab.0.bottom/0.23.1920.978@0.23.1920.978" timestamp="1595511745693" />
     <state width="949" height="258" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1595416334073" />
     <state width="1379" height="258" key="GridCell.Tab.0.bottom/0.23.1920.994@0.23.1920.994" timestamp="1595008262284" />
     <state width="949" height="258" key="GridCell.Tab.0.bottom/0.23.1920.995@0.23.1920.995" timestamp="1595414538376" />
     <state width="949" height="258" key="GridCell.Tab.0.bottom/0.23.1920.996@0.23.1920.996" timestamp="1595406924190" />
-    <state width="949" height="252" key="GridCell.Tab.0.center" timestamp="1595511745692">
-      <screen x="0" y="23" width="1920" height="978" />
+    <state width="1771" height="283" key="GridCell.Tab.0.center" timestamp="1596278937387">
+      <screen x="0" y="23" width="1792" height="1031" />
     </state>
+    <state width="1771" height="278" key="GridCell.Tab.0.center/0.23.1792.1022@0.23.1792.1022" timestamp="1596199641736" />
+    <state width="1771" height="280" key="GridCell.Tab.0.center/0.23.1792.1030@0.23.1792.1030" timestamp="1596265817442" />
+    <state width="1771" height="283" key="GridCell.Tab.0.center/0.23.1792.1031@0.23.1792.1031" timestamp="1596278937387" />
+    <state width="1771" height="280" key="GridCell.Tab.0.center/0.23.1792.1033@0.23.1792.1033" timestamp="1596267370094" />
+    <state width="1771" height="283" key="GridCell.Tab.0.center/0.23.1792.1042@0.23.1792.1042" timestamp="1596270460851" />
+    <state width="1329" height="217" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1596007295847" />
     <state width="949" height="252" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1595431031237" />
     <state width="949" height="252" key="GridCell.Tab.0.center/0.23.1920.978@0.23.1920.978" timestamp="1595511745692" />
     <state width="949" height="258" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1595416334072" />
     <state width="1379" height="258" key="GridCell.Tab.0.center/0.23.1920.994@0.23.1920.994" timestamp="1595008262283" />
     <state width="949" height="258" key="GridCell.Tab.0.center/0.23.1920.995@0.23.1920.995" timestamp="1595414538375" />
     <state width="949" height="258" key="GridCell.Tab.0.center/0.23.1920.996@0.23.1920.996" timestamp="1595406924189" />
-    <state width="949" height="252" key="GridCell.Tab.0.left" timestamp="1595511745692">
-      <screen x="0" y="23" width="1920" height="978" />
+    <state width="1771" height="283" key="GridCell.Tab.0.left" timestamp="1596278937386">
+      <screen x="0" y="23" width="1792" height="1031" />
     </state>
+    <state width="1771" height="278" key="GridCell.Tab.0.left/0.23.1792.1022@0.23.1792.1022" timestamp="1596199641735" />
+    <state width="1771" height="280" key="GridCell.Tab.0.left/0.23.1792.1030@0.23.1792.1030" timestamp="1596265817442" />
+    <state width="1771" height="283" key="GridCell.Tab.0.left/0.23.1792.1031@0.23.1792.1031" timestamp="1596278937386" />
+    <state width="1771" height="280" key="GridCell.Tab.0.left/0.23.1792.1033@0.23.1792.1033" timestamp="1596267370093" />
+    <state width="1771" height="283" key="GridCell.Tab.0.left/0.23.1792.1042@0.23.1792.1042" timestamp="1596270460851" />
+    <state width="1329" height="217" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1596007295847" />
     <state width="949" height="252" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1595431031237" />
     <state width="949" height="252" key="GridCell.Tab.0.left/0.23.1920.978@0.23.1920.978" timestamp="1595511745692" />
     <state width="949" height="258" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1595416334071" />
     <state width="1379" height="258" key="GridCell.Tab.0.left/0.23.1920.994@0.23.1920.994" timestamp="1595008262282" />
     <state width="949" height="258" key="GridCell.Tab.0.left/0.23.1920.995@0.23.1920.995" timestamp="1595414538374" />
     <state width="949" height="258" key="GridCell.Tab.0.left/0.23.1920.996@0.23.1920.996" timestamp="1595406924189" />
-    <state width="949" height="252" key="GridCell.Tab.0.right" timestamp="1595511745692">
-      <screen x="0" y="23" width="1920" height="978" />
+    <state width="1771" height="283" key="GridCell.Tab.0.right" timestamp="1596278937387">
+      <screen x="0" y="23" width="1792" height="1031" />
     </state>
+    <state width="1771" height="278" key="GridCell.Tab.0.right/0.23.1792.1022@0.23.1792.1022" timestamp="1596199641736" />
+    <state width="1771" height="280" key="GridCell.Tab.0.right/0.23.1792.1030@0.23.1792.1030" timestamp="1596265817443" />
+    <state width="1771" height="283" key="GridCell.Tab.0.right/0.23.1792.1031@0.23.1792.1031" timestamp="1596278937387" />
+    <state width="1771" height="280" key="GridCell.Tab.0.right/0.23.1792.1033@0.23.1792.1033" timestamp="1596267370094" />
+    <state width="1771" height="283" key="GridCell.Tab.0.right/0.23.1792.1042@0.23.1792.1042" timestamp="1596270460852" />
+    <state width="1329" height="217" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1596007295847" />
     <state width="949" height="252" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1595431031238" />
     <state width="949" height="252" key="GridCell.Tab.0.right/0.23.1920.978@0.23.1920.978" timestamp="1595511745692" />
     <state width="949" height="258" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1595416334073" />

@@ -2,7 +2,7 @@ import requests
 from lxml import etree
 import re
 import execjs
-
+from urllib.parse import urlencode
 
 def _get_douban(movie):
     # 获取豆瓣电影的搜索数据
@@ -36,7 +36,49 @@ def _get_zhihu(movie):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
     }
+    data=requests.get(url,headers=headers).text
+    d_data=etree.HTML(data)
+    context_data=d_data.xpath('//*[@id="SearchMain"]/div/div/div/div/div[1]/div/div/div/div[1]/div[1]/h2/a/text()')
+    print(context_data)
 
+
+def _parse_ajax_web():
+        url = 'https://www.zhihu.com/api/v4/search_v3?'
+        # 请求头信息
+        headers = {
+            'Cookie': "K6QRsRCNzMnZXqFgLKAvQNdJRBjG9rJa",
+            'Host': 'www.zhihu.com',
+            'Referer': 'http://www.zhihu.com/',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36',
+            'Accept-Encoding': 'gzip'
+            #"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0",
+            #"Connection": "keep-alive",
+            #"Accept": "text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            #"Accept-Language": "zh-CN,zh;q=0.8",
+            #"referer": "https://www.zhihu.com/",
+            #'x-requested-with': 'XMLHttpRequest'
+        }
+        # 每个ajax请求要传递的参数
+        parm = {
+            't': 'general',
+            'q': '碟中谍 4',
+            'correction': 1,
+            'offset': 0,
+            'limit': 20,
+            'lc_idx': 0,
+            'show_all_topics': 0
+        }
+        # 构造ajax请求url
+        ajax_url = url + urlencode(parm)
+        # 调用ajax请求
+        response = requests.get(ajax_url, headers=headers)
+        # ajax请求返回的是json数据，通过调用json()方法得到json数据
+        json = response.json()
+        data = json.get('wiki_box')
+        print(json)
+        #for item in data:
+        #    if item.get('title') is not None:
+        #        print(item.get('title'))
 
 def _get_IMDB(movie):
     url = 'https://www.imdb.com/find?q=' + ''.join(re.findall('[a-zA-Z0-9 ]', movie)) + '&ref_=nv_sr_sm'
@@ -63,7 +105,7 @@ def _get_IMDB(movie):
 
 
 def get_data(movie):
-    if _get_IMDB(movie) == False:
+    if _get_zhihu(movie) == False:
         print("No result found.")
 
 def _update_mysql():
@@ -74,9 +116,9 @@ def push_data():
 
 def main():
     movie = '碟中谍4 Mission Impossible'
-    get_data(movie)
-    push_data()
-
+    #get_data(movie)
+    #push_data()
+    _parse_ajax_web()
     return 0
 
 main()
