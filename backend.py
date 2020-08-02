@@ -6,6 +6,9 @@ from urllib.parse import urlencode
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+zhihu_account=''    # 在这里输入您的知乎账号
+zhihu_passwd=''     # 在这里输入您的知乎密码
+
 
 def _get_douban(movie):
     # 获取豆瓣电影的搜索数据
@@ -90,10 +93,10 @@ def _zhihu_login():
 
     elem=driver.find_element_by_name("account")# 寻找账号输入框
     elem.clear()
-    elem.send_keys("youraccount")# 需要修改为你的帐号
+    elem.send_keys(zhihu_account)# 需要修改为你的帐号
     password=driver.find_element_by_name("password")# 寻找密码输入框
     password.clear()
-    password.send_keys("yourpasswd")# 需要修改为你的密码
+    password.send_keys(zhihu_passwd)# 需要修改为你的密码
     input('请在网页上点击倒立的文字，完成后回到这里按任意键继续')
     elem.send_keys(Keys.RETURN)# 模拟按下回车键
     time.sleep(10)# 这里可以直接sleep，也可以使用等待某个条件出现

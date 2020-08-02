@@ -180,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596295113803</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add _zhihu_login()">
+      <created>1596382616579</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1596382616579</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,7 +214,8 @@
     <MESSAGE value="Follow the style guide" />
     <MESSAGE value="Add get_rank in _get_IMDB()" />
     <MESSAGE value="Add _parse_ajax_web()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add _parse_ajax_web()" />
+    <MESSAGE value="Add _zhihu_login()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add _zhihu_login()" />
   </component>
   <component name="WindowStateProjectService">
     <state x="685" y="169" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596197284502">
@@ -292,9 +300,10 @@
       <screen x="0" y="23" width="1920" height="994" />
     </state>
     <state x="741" y="232" width="586" height="735" key="find.popup/0.23.1920.994@0.23.1920.994" timestamp="1595008316431" />
-    <state x="625" y="242" width="670" height="677" key="search.everywhere.popup" timestamp="1595270495573">
-      <screen x="0" y="23" width="1920" height="996" />
+    <state x="583" y="250" width="670" height="703" key="search.everywhere.popup" timestamp="1596382542528">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
+    <state x="583" y="250" width="670" height="703" key="search.everywhere.popup/0.23.1792.1034/-1920.23.1920.1057@0.23.1792.1034" timestamp="1596382542528" />
     <state x="625" y="242" width="670" height="676" key="search.everywhere.popup/0.23.1920.995@0.23.1920.995" timestamp="1595018079052" />
     <state x="625" y="242" width="670" height="677" key="search.everywhere.popup/0.23.1920.996@0.23.1920.996" timestamp="1595270495573" />
   </component>
