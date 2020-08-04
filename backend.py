@@ -91,7 +91,7 @@ def _zhihu_login():
     driver = webdriver.Chrome('./chromedriver')# 需要修改webdriver的路径
     driver.get("http://www.zhihu.com/#signin")
 
-    elem=driver.find_element_by_name("account")# 寻找账号输入框
+    elem=driver.find_element_by_name("username")# 寻找账号输入框
     elem.clear()
     elem.send_keys(zhihu_account)# 需要修改为你的帐号
     password=driver.find_element_by_name("password")# 寻找密码输入框
