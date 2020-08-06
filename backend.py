@@ -6,8 +6,16 @@ from urllib.parse import urlencode
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
-zhihu_account=''    # 在这里输入您的知乎账号
-zhihu_passwd=''     # 在这里输入您的知乎密码
+import json
+
+# 读取配置文件config.json（请将config.json.template改为config.json并填写相关配置信息）
+conf_f = open("config.json","r")
+conf_str=conf_f.read()
+conf_dic=json.loads(conf_str)
+
+# 以下定义您的知乎账号和密码
+zhihu_account=conf_dic["zhihu_account"]
+zhihu_passwd=conf_dic["zhihu_passwd"]
 
 
 def _get_douban(movie):
@@ -142,7 +150,8 @@ def main():
     movie = '碟中谍4 Mission Impossible'
     #get_data(movie)
     #push_data()
-    _parse_ajax_web()
+    #_parse_ajax_web()
+    _zhihu_login()
     return 0
 
 main()
