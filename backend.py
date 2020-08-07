@@ -108,6 +108,23 @@ def _zhihu_login():
     input('请在网页上点击倒立的文字，完成后回到这里按任意键继续')
     elem.send_keys(Keys.RETURN)# 模拟按下回车键
     time.sleep(10)# 这里可以直接sleep，也可以使用等待某个条件出现
+
+    url = 'https://www.zhihu.com/api/v4/search_v3?'
+    # 每个ajax请求要传递的参数
+    parm = {
+        't': 'general',
+        'q': '碟中谍 4',
+        'correction': 1,
+        'offset': 0,
+        'limit': 20,
+        'lc_idx': 0,
+        'show_all_topics': 0
+    }
+    # 构造ajax请求url
+    ajax_url = url + urlencode(parm)
+
+    driver.get(ajax_url)
+
     print(driver.page_source)
     driver.quit()
 
