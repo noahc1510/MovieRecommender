@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import json
+import zhihu_oauth
 
 # 读取配置文件config.json（请将config.json.template改为config.json并填写相关配置信息）
 conf_f = open("config.json", "r")
@@ -16,6 +17,39 @@ conf_dic = json.loads(conf_str)
 # 以下定义您的知乎账号和密码
 zhihu_account = conf_dic["zhihu_account"]
 zhihu_passwd = conf_dic["zhihu_passwd"]
+
+# Headers for universe browser
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+}
+
+
+class GetDouban:
+    movie=''
+    def __init__(self):
+        # 获取豆瓣电影的搜索数据
+        url = 'https://search.douban.com/movie/subject_search?search_text=' + self.movie + '&cat=1002'
+        data = requests.get(url, headers=headers)
+
+        # 解密数据包
+        e_data = re.search('window.__DATA__ = "([^"]+)"', data.text).group(1)
+        with open('douban_decrypt.js', 'r', encoding='gbk') as f:
+            decrypt_js = f.read()
+        ctx = execjs.compile(decrypt_js)
+        d_data = ctx.call('decrypt', e_data)
+
+        # 提取数据包中的评分信息和标题信息
+        str_data = str(d_data).replace('}', ',')  # 统一rank数值后的格式为','结尾
+        rank = re.findall(r'\'value\': (.*?),', str_data)
+        title = re.findall(r'\'title\': \'(.*?)\'', str_data)
+
+        for i in range(len(rank)):
+            print('{}:\t{}\t{}分'.format(i, title[i], rank[i]))
+
+        # for item in d_data['payload']['items']:
+        #    print(item)
+
+        return 1
 
 
 def _get_douban(movie):
@@ -47,9 +81,7 @@ def _get_douban(movie):
 
 def _get_zhihu(movie):
     url = 'https://www.zhihu.com/search?type=content&q=' + movie
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
-    }
+
     data = requests.get(url, headers=headers).text
     d_data = etree.HTML(data)
     context_data = d_data.xpath('//*[@id="SearchMain"]/div/div/div/div/div[1]/div/div/div/div[1]/div[1]/h2/a/text()')
@@ -163,7 +195,8 @@ def _get_IMDB(movie):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
     }
-    data = requests.get(url, headers=headers).text
+    data = requests.get(url, headers=headers)
+    return type(data)
     d_data = etree.HTML(data)
     for i in range(1, 7):  # IMDB最多只生成6个标题
         title_data = d_data.xpath('//*[@id="main"]/div/div[2]/table/tr[{}]/td[2]/a/text()'.format(i))  # 标题序数(x)=tr[x]
@@ -199,8 +232,11 @@ def main():
     movie = '碟中谍4 Mission Impossible'
     # get_data(movie)
     # push_data()
-    _parse_ajax_web()
-    #_zhihu_login()
+    # _parse_ajax_web()
+    # _zhihu_login()
+    a = GetDouban(movie)
+
+
     return 0
 
 
